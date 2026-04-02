@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#define myled GPIO_PIN_5
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -95,7 +95,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  HAL_GPIO_WritePin(GPIOA, myled, GPIO_PIN_SET);
+	  HAL_Delay(200);
+	  HAL_GPIO_WritePin(GPIOA, myled, GPIO_PIN_RESET);
+	  HAL_Delay(100);
+	  HAL_GPIO_WritePin(GPIOA, myled, GPIO_PIN_SET);
+	  HAL_Delay(200);
+	  HAL_GPIO_WritePin(GPIOA, myled, GPIO_PIN_RESET);
+	  HAL_Delay(100);
+	  HAL_Delay(400);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
